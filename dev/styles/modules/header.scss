@@ -1,0 +1,25 @@
+.main-header {
+  padding: 25px 0;
+  position: relative;
+
+  &.show{
+    background: #000000;
+
+    .main-nav{
+      visibility: visible;
+      opacity: 1;
+    }
+    .mobile-menu-btn{
+      svg{
+        path{
+          fill: $white;
+        }
+      }
+    }
+  }
+  .container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
