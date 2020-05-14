@@ -1,1 +1,55 @@
-"use strict";$(function(){$(".menu-btn").on("click",function(){$(".main-header, body").toggleClass("show")}),$("body").on("click",".page-pilling__item",function(t){t.preventDefault();var i=$(this).attr("href");$(this);if($(i).length){var a=$(i).offset().top;$("body,html").stop().animate({scrollTop:a},1500)}else console.warn("ID don't search!")});function t(){var i=$(window).scrollTop();$(".page-pilling__item").each(function(){var t=$(this);if(t.attr("data-top")<=i)return $(".page-pilling__item").removeClass("active"),t.addClass("active"),!0})}var n;n=$(".page-pilling"),$(".position-element").each(function(t){var i=$(this),a=i.offset().top,e=i.attr("id");n.append('<li><a href="#'.concat(e,'" data-top="').concat(a,'" class="page-pilling__item"></a></li>'))}),t(),$(".page-pilling li:eq(0) .page-pilling__item").addClass("active"),$(window).scroll(t)});
+"use strict";
+
+$(function () {
+  $(".menu-btn").on('click', function () {
+    $('.main-header, body').toggleClass('show');
+  });
+  $("body").on('click', '.page-pilling__item, .anchor', function (e) {
+    e.preventDefault();
+    var anchor = $(this).attr("href");
+    var $this = $(this);
+
+    if ($(anchor).length) {
+      var run = $(anchor).offset().top;
+      $('body,html').stop().animate({
+        scrollTop: run
+      }, 1500);
+    } else {
+      console.warn("ID don't search!");
+    }
+  });
+
+  var positionElements = function positionElements() {
+    var $pagePilling = $('.page-pilling');
+    $('.position-element').each(function (index) {
+      var $this = $(this);
+      var topPosition = $this.offset().top;
+      var id = $this.attr("id");
+
+      if (index === 0) {
+        $pagePilling.append("<li><a href=\"#".concat(id, "\" data-top=\"").concat(topPosition, "\" class=\"page-pilling__item\"></a></li>"));
+      } else {
+        $pagePilling.append("<li><a href=\"#".concat(id, "\" data-top=\"").concat(topPosition, "\" class=\"page-pilling__item\"></a></li>"));
+      }
+    });
+  };
+
+  var scrollPage = function scrollPage() {
+    var scrollTop = $(window).scrollTop();
+    $('.page-pilling__item').each(function () {
+      var $this = $(this);
+      var topPositionElement = $this.attr("data-top");
+
+      if (scrollTop >= topPositionElement) {
+        $('.page-pilling__item').removeClass("active");
+        $this.addClass("active");
+        return true;
+      }
+    });
+  };
+
+  positionElements();
+  scrollPage();
+  $('.page-pilling li:eq(0) .page-pilling__item').addClass("active");
+  $(window).scroll(scrollPage);
+});

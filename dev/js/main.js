@@ -3,7 +3,7 @@ $(function () {
     $('.main-header, body').toggleClass('show');
   });
 
-  $("body").on('click', '.page-pilling__item',function(e){
+  $("body").on('click', '.page-pilling__item, .anchor',function(e){
     e.preventDefault();
 
     let anchor = $(this).attr("href");

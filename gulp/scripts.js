@@ -12,6 +12,5 @@ module.exports = function script() {
     .pipe(babel({
       presets: ['@babel/env']
     }))
-    .pipe(gulpif(argv.prod, uglify()))
     .pipe(gulp.dest('dist/js/'));
 };
