@@ -18,6 +18,9 @@ $(function () {
       console.warn("ID don't search!");
     }
   });
+  $('.main-nav').on("click", function () {
+    $("body, .main-header").removeClass("show");
+  });
 
   var positionElements = function positionElements() {
     var $pagePilling = $('.page-pilling');

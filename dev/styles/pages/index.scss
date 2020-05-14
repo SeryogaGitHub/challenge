@@ -70,6 +70,9 @@
     p{
       color: $white;
     }
+    img{
+      margin: 0 auto;
+    }
     h4{
       text-transform: uppercase;
       @include m-font-7;

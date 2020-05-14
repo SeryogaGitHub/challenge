@@ -389,6 +389,7 @@ a.gold.btn {
     width: 100%;
     cursor: pointer;
     padding: 10px 38px;
+    text-decoration: none;
 }
 
 .main-nav li a.active, .main-nav li a:hover {
@@ -831,6 +832,10 @@ a.gold.btn {
 
 .our-purpose .items p {
     color: #fff;
+}
+
+.our-purpose .items img {
+    margin: 0 auto;
 }
 
 .our-purpose .items h4 {

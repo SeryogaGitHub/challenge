@@ -22,6 +22,7 @@
       width: 100%;
       cursor: pointer;
       padding: 10px 38px;
+      text-decoration: none;
 
       &.active, &:hover{
         color: $gold;

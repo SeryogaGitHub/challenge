@@ -17,6 +17,10 @@ $(function () {
     }
   });
 
+  $('.main-nav').on("click", function () {
+    $("body, .main-header").removeClass("show");
+  });
+
   let positionElements = () => {
     let $pagePilling = $('.page-pilling');
 
