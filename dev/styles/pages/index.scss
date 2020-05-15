@@ -482,6 +482,14 @@
   }
 }
 @media screen and (max-width:576px) {
+  .apply-now__text{
+    padding: 45px 30px;
+
+    .btn{
+      width: 100%;
+      min-width: initial;
+    }
+  }
   .we-come-together{
     &__text{
       h5{

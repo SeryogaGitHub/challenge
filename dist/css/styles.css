@@ -353,6 +353,14 @@ a.gold.btn {
     fill: #fff;
 }
 
+.main-header .logo {
+    margin-right: 52px;
+}
+
+.main-header .logo img, .main-header .logo svg {
+    display: block;
+}
+
 .main-header .container {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -432,7 +440,7 @@ a.gold.btn {
     box-shadow: 3px 3px 6px 0 rgba(0, 0, 0, 0.31);
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 769px) {
     .page-pilling {
         display: none;
     }
@@ -714,11 +722,21 @@ a.gold.btn {
     height: 30px;
     background: transparent;
     border: none;
-    margin-left: 52px;
+    display: none;
 }
 
 .mobile-menu-btn svg {
     display: block;
+}
+
+@media screen and (max-width: 769px) {
+    .mobile-menu-btn {
+        display: block;
+    }
+
+    .hide-tab {
+        display: none !important;
+    }
 }
 
 @media screen and (max-width: 576px) {
@@ -1273,6 +1291,15 @@ a.gold.btn {
 }
 
 @media screen and (max-width: 576px) {
+    .apply-now__text {
+        padding: 45px 30px;
+    }
+
+    .apply-now__text .btn {
+        width: 100%;
+        min-width: initial;
+    }
+
     .we-come-together__text h5 {
         font-size: 16px;
     }

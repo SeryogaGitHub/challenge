@@ -17,6 +17,13 @@
       }
     }
   }
+  .logo{
+    margin-right: 52px;
+
+    img, svg{
+      display: block;
+    }
+  }
   .container{
     display: flex;
     justify-content: space-between;

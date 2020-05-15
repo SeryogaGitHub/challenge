@@ -1,5 +1,5 @@
 $(function () {
-  $(".menu-btn").on('click', function () {
+  $(".mobile-menu-btn").on('click', function () {
     $('.main-header, body').toggleClass('show');
   });
 
@@ -21,25 +21,23 @@ $(function () {
     $("body, .main-header").removeClass("show");
   });
 
+  let mainContentHeight = $('.main-content').height();
+
   let positionElements = () => {
     let $pagePilling = $('.page-pilling');
+    $pagePilling.empty();
 
-    $('.position-element').each(function(index) {
+    $('.position-element').each(function() {
       let $this = $(this);
       let topPosition = $this.offset().top;
       let id = $this.attr("id");
 
-      if(index === 0){
-        $pagePilling.append(`<li><a href="#${id}" data-top="${topPosition}" class="page-pilling__item"></a></li>`);
-      } else {
-        $pagePilling.append(`<li><a href="#${id}" data-top="${topPosition}" class="page-pilling__item"></a></li>`);
-      }
-
+      $pagePilling.append(`<li><a href="#${id}" data-top="${topPosition}" class="page-pilling__item"></a></li>`);
     });
   };
 
   let scrollPage = () => {
-    let scrollTop = $(window).scrollTop();
+    let scrollTop = $(window).scrollTop() + 100;
 
     $('.page-pilling__item').each(function () {
       let $this = $(this);
@@ -58,4 +56,14 @@ $(function () {
   $('.page-pilling li:eq(0) .page-pilling__item').addClass("active");
 
   $(window).scroll(scrollPage);
+
+  $(window).resize(() => {
+    let newMainContentHeight = $('.main-content').height();
+    if(mainContentHeight !== newMainContentHeight){
+      mainContentHeight = newMainContentHeight;
+      positionElements();
+      scrollPage();
+    }
+  });
+
 });

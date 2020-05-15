@@ -230,10 +230,18 @@
   height: 30px;
   background: transparent;
   border: none;
-  margin-left: 52px;
+  display: none;
 
   svg{
     display: block;
+  }
+}
+@media screen and (max-width: 769px){
+  .mobile-menu-btn{
+    display: block;
+  }
+  .hide-tab{
+    display: none!important;
   }
 }
 @media screen and (max-width: 576px){
